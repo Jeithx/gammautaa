@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ekibimiz - GAMMA</title>
+  
+  <!-- Google Fonts: Bebas Neue -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- Özel CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* GENEL STİLLER */
+    body {
+      margin: 0;
+      padding-top: 45px; /* Sabit navbar/top bar için üst boşluk */
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #1c1c1c;
+      color: #ffffff;
+    }
+
+    /* Masaüstü Top Bar (Instagram Linkleri) */
+    .top-bar {
+      background-color: #111;
+      padding: 8px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    /* Mobil Instagram Ticker */
+    .instagram-ticker {
+      display: none;       /* Masaüstünde gizli */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #111;
+      z-index: 1000;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .instagram-ticker .ticker-content {
+      display: inline-block;
+      /* Tüm içeriğin genişliğini %200 kabul ediyoruz, çünkü iki kez tekrarlıyoruz */
+      animation: ticker 15s linear infinite;
+      animation-delay: 0s;
+    }
+    .instagram-ticker a {
+      color: #ffffff;
+      margin: 0 2px; /* İsimler arasındaki boşluğu azaltır */
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Mobilde Top Bar Gizle, Ticker Göster */
+    @media (max-width: 767.98px) {
+      .top-bar {
+        display: none !important;
+      }
+      .instagram-ticker {
+        display: block !important;
+      }
+    }
+
+    /* Navbar */
+    .navbar-dark.bg-dark {
+      background-color: #0d0d0d !important;
+      border-bottom: 2px solid #ff6600;
+    }
+    .nav-link {
+      color: #ffffff !important;
+      margin: 0 5px;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      color: #ff6600 !important;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: #ff6600 !important;
+    }
+
+    /* Kartlar (Ekibimiz) */
+    .card {
+      background-color: #2b2b2b;
+      border: none;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #ffffff;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 0px 10px #ff6600;
+    }
+    .card-img-top {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .card .card-title {
+      color: #ff6600;
+    }
+
+    /* Footer */
+    footer.bg-dark {
+      background-color: #0d0d0d !important;
+      border-top: 2px solid #ff6600;
+      padding: 1rem 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Masaüstü Top Bar (Instagram Linkleri) -->
+  <div class="top-bar d-flex justify-content-end">
+    <div class="container d-flex justify-content-end flex-nowrap">
+      <a href="https://www.instagram.com/egemen_caliskannn/" target="_blank" class="text-white mr-3" style="text-decoration: none;">
+        <i class="fab fa-instagram"></i> Egemen Çalışkan
+      </a>
+      <a href="https://www.instagram.com/erdogan.baser/" target="_blank" class="text-white mr-3" style="text-decoration: none;">
+        <i class="fab fa-instagram"></i> Erdoğan Başer
+      </a>
+      <a href="https://www.instagram.com/ahm.boston/" target="_blank" class="text-white mr-3" style="text-decoration: none;">
+        <i class="fab fa-instagram"></i> Ahmet Bostan
+      </a>
+      <a href="https://www.instagram.com/zeynepasli_acar/" target="_blank" class="text-white mr-3" style="text-decoration: none;">
+        <i class="fab fa-instagram"></i> Zeynep Aslı Acar
+      </a>
+      <!-- <a href="https://www.instagram.com/ahm.boston/" target="_blank" class="text-white mr-3" style="text-decoration: none;">
+        <i class="fab fa-instagram"></i> Ahmet Ercan
+      </a> -->
+      <a href="https://www.instagram.com/zeath_vfx/" target="_blank" class="text-white" style="text-decoration: none;">
+        <i class="fab fa-instagram"></i> Zehra Yar
+      </a>
+    </div>
+  </div>
+
+  <!-- Mobil Instagram Ticker -->
+  <div class="instagram-ticker">
+    <div class="ticker-content">
+      <span>
+        <a href="https://www.instagram.com/egemen_caliskannn/" target="_blank">Egemen Çalışkan</a>
+        <span>|</span>
+        <a href="https://www.instagram.com/erdogan.baser/" target="_blank">Erdoğan Başer</a>
+        <span>|</span>
+        <a href="https://www.instagram.com/ahm.boston/" target="_blank">Ahmet Bostan</a>
+        <span>|</span>
+        <a href="https://www.instagram.com/zeynepasli_acar/" target="_blank">Zeynep Aslı Acar</a>
+        <span>|</span>
+        <!-- <a href="https://www.instagram.com/ahm.boston/" target="_blank">Ahmet Ercan</a>
+        <span>|</span> -->
+        <a href="https://www.instagram.com/zeath_vfx/" target="_blank">Zehra Yar</a>
+        <span>|</span>
+      </span>
+      <span>
+        <a href="https://www.instagram.com/egemen_caliskannn/" target="_blank">Egemen Çalışkan</a>
+        <span>|</span>
+        <a href="https://www.instagram.com/erdogan.baser/" target="_blank">Erdoğan Başer</a>
+        <span>|</span>
+        <a href="https://www.instagram.com/ahm.boston/" target="_blank">Ahmet Bostan</a>
+        <span>|</span>
+        <a href="https://www.instagram.com/zeynepasli_acar/" target="_blank">Zeynep Aslı Acar</a>
+        <!-- <span>|</span>
+        <a href="https://www.instagram.com/ahm.boston/" target="_blank">Ahmet Ercan</a>
+        <span>|</span> -->
+        <a href="https://www.instagram.com/zeath_vfx/" target="_blank">Zehra Yar</a>
+      </span>
+    </div>
+  </div>
+  
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="top: -5px;">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html" style="font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem;">
+        GAMMA
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavTeam">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavTeam">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+          <li class="nav-item"><a class="nav-link" href="hakkimizda.html">Hakkımızda</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">Ekibimiz</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- EKİBİMİZ BÖLÜMÜ -->
+  <section class="container py-5">
+    <div class="text-center mb-5">
+      <h1 class="display-4" style="font-family: 'Bebas Neue', sans-serif;">Ekibimiz</h1>
+      <p>Organizasyonumuzda yer alan değerli ekip arkadaşlarımızla tanışın.</p>
+    </div>
+    
+    <div class="row" id="teamMembers">
+      <!-- Üye 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm">
+          <img src="img/erdo.jpg" class="card-img" alt="Üye 1">
+          <div class="card-body">
+            <h5 class="card-title" style="font-family: 'Bebas Neue', sans-serif;">Erdoğan Başer</h5>
+            <p class="card-text">
+              <strong>Görevi:</strong> Başkan<br>
+              <strong>Uzmanlık:</strong> Unity, C#, Network<br>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Üye 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm">
+          <img src="img/egemen.jpg" class="card-img" alt="Üye 2">
+          <div class="card-body">
+            <h5 class="card-title" style="font-family: 'Bebas Neue', sans-serif;">Egemen Çalışkan</h5>
+            <p class="card-text">
+              <strong>Görevi:</strong> Başkan Yardımcısı<br>
+              <strong>Uzmanlık:</strong> Yapay Zeka, Unity, Full-stack Geliştirme<br>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Üye 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm">
+          <img src="img/bostan.jpeg" class="card-img" alt="Üye 3">
+          <div class="card-body">
+            <h5 class="card-title" style="font-family: 'Bebas Neue', sans-serif;">Ahmet Bostan</h5>
+            <p class="card-text">
+              <strong>Görevi:</strong> Sosyal Medya Organizatörü<br>
+              <strong>Uzmanlık:</strong> 3D Modelleme, Blender, Animatör<br>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Üye 4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm">
+          <img src="img/zeynep.jpeg" class="card-img" alt="Üye 4">
+          <div class="card-body">
+            <h5 class="card-title" style="font-family: 'Bebas Neue', sans-serif;">Zeynep Aslı Acar</h5>
+            <p class="card-text">
+              <strong>Görevi:</strong> Yönetim Kurulu Üyesi<br>
+              <strong>Uzmanlık:</strong> Veri Analizi, Makine Öğrenmesi, Yapay Zeka<br>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Üye 5 -->
+      <!-- <div class="col-md-4 mb-4">
+        <div class="card shadow-sm">
+          <img src="img/ahmetanon.jpeg" class="card-img" alt="Üye 5">
+          <div class="card-body">
+            <h5 class="card-title" style="font-family: 'Bebas Neue', sans-serif;">Ahmet Ercan</h5>
+            <p class="card-text">
+              <strong>Görevi:</strong> Yönetim Kurulu Üyesi<br>
+              <strong>Uzmanlık:</strong> Hiçbirimiz Bilmiyoruz...<br>
+            </p>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Üye 6 -->
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm">
+          <img src="img/zehra.jpeg" class="card-img" alt="Üye 6">
+          <div class="card-body">
+            <h5 class="card-title" style="font-family: 'Bebas Neue', sans-serif;">Zehra Yar</h5>
+            <p class="card-text">
+              <strong>Görevi:</strong> Yönetim Kurulu Üyesi<br>
+              <strong>Uzmanlık:</strong> Unity, Vfx Graph, Particle System<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 GAMMA Topluluğu. Tüm hakları saklıdır.</p>
+  </footer>
+  
+  <!-- JS Dosyaları -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
